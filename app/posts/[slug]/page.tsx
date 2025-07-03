@@ -122,7 +122,7 @@ export default async function PostPage({ params }: PageProps) {
 
           {/* Post Content */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
-            <PostContent content={post.metadata?.content || ''} />
+            <PostContent post={post} />
           </div>
 
           {/* Author Card */}

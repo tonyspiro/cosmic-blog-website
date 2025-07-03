@@ -11,7 +11,9 @@ export default function PostContent({ post }: PostContentProps) {
   const publishedDate = post.metadata.published_date;
 
   // Simple markdown to HTML conversion for basic formatting
-  const formatContent = (content: string): string => {
+  const formatContent = (content: string | undefined): string => {
+    if (!content) return '';
+    
     return content
       // Headers
       .replace(/### (.*?)$/gm, '<h3 class="text-xl font-semibold text-gray-900 mt-8 mb-4">$1</h3>')
